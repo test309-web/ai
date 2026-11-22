@@ -7,7 +7,11 @@ from pydantic import BaseModel, Field
 
 API_TOKEN = os.environ["ORACLE_API_TOKEN"]
 OLLAMA_URL = os.getenv("OLLAMA_URL", "http://127.0.0.1:11434")
-ALLOWED_MODELS = {x.strip() for x in os.getenv("ALLOWED_MODELS", "llama3.2:1b").split(",") if x.strip()}
+ALLOWED_MODELS = {
+    x.strip()
+    for x in os.getenv("ALLOWED_MODELS", "gemma3:4b").split(",")
+    if x.strip()
+}
 RATE_LIMIT = int(os.getenv("RATE_LIMIT_PER_MINUTE", "12"))
 
 app = FastAPI(title="SoftAtlas private AI gateway")
