@@ -4,9 +4,7 @@ import { FormEvent, useEffect, useRef, useState } from "react";
 
 type Message = { role: "user" | "assistant"; content: string };
 const MODELS = [
-  { id: "llama3.2:1b", label: "Llama 3.2 1B" }
-  // Add only models you have explicitly approved, e.g.:
-  // { id: "qwen2.5:3b", label: "Qwen 2.5 3B" },
+   { id: "gemma3:4b", label: "Gemma 3 4B" }
 ];
 
 export default function Home() {
